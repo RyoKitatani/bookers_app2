@@ -13,7 +13,7 @@
         <th><%= book.body %></th>
         <th><%= link_to "Show", book_path(book) %></th>
         <th><%= link_to "Edit", edit_book_path(book) %></th>
-        <th><%= link_to "Destroy", root_path %></th>
+        <th><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "削除してよろしいでしょうか？" %></th>
     </tbody>
     <% end %>
 </table>
@@ -23,6 +23,6 @@
     <p>Title</p>
     <%= f.text_field :title %>
     <p>Body</p>
-    <%= f.text_area :body %>
-    <%= f.submit "Create Book" %><br>
+    <%= f.text_area :body %><br>
+    <%= f.submit "Create Book" %>
 <% end %>
